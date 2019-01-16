@@ -2,10 +2,10 @@
 
 // 	$('#add').on('click', function(event) {
 // 		event.preventDefault();
-
+		
 // 		const listTag = document.createElement('li');
 
-// 		let textField = $('#textfield').val();
+// 		let textField = $('#textfield').contents();
 
 // 		listTag.append(textfield);
 
@@ -15,12 +15,16 @@
 
 // });
 
-function populate() {
-    var wishList = document.createElement("LI");
-    var textField = document.createTextNode(document.getElementById("textfield").value);
+var buttonEl = document.getElementById('add');
 
-    wishList.appendChild(textField);
+buttonEl.addEventListener('click', function() {
 
-    document.getElementById('list').appendChild(wishList);
+	var wishList = document.createElement("LI");
+	var textField = document.createTextNode(document.getElementById("textfield").value);
 
-}
+		wishList.appendChild(textField);
+
+		document.getElementById('list').appendChild(wishList);
+
+
+});
